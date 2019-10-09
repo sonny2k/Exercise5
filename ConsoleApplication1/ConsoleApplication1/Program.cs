@@ -23,7 +23,10 @@ namespace ConsoleApplication1
             Console.WriteLine("input charater here: ");
             char i = Convert.ToChar(Console.ReadLine());
             Console.Write((int)i);
-            Console.WriteLine("Check char here: ");
+            Console.WriteLine("\n");
+            CheckUpOrLow();
+            Console.WriteLine("\n");
+            ChangeUpOrLow();
         }
 
         static void Print_a_2_z_v1()
@@ -85,6 +88,41 @@ namespace ConsoleApplication1
             }
         }
 
-  
+        static void CheckUpOrLow()
+        {
+            Console.WriteLine("check char here: ");
+            char c = Convert.ToChar(Console.ReadLine());
+            if ((int)c >= 65 && (int)c <= 90)
+                Console.WriteLine("this char is upper case !");
+            else if ((int)c >= 97 && (int)c <= 122)
+                Console.WriteLine("this char is lower case !");
+            else
+                Console.WriteLine("You typed char wrong");
+        }
+
+        static void ChangeUpOrLow()
+        {
+            Console.WriteLine("change char here: ");
+            char c = Convert.ToChar(Console.ReadLine());
+            if ((int)c >= 65 && (int)c <= 90)
+            {
+                int e = Convert.ToInt32(c);
+                e = e + 32;
+                Console.WriteLine((char)e);
+            }
+                
+            else if ((int)c >= 97 && (int)c <= 122) 
+            {
+                int e = Convert.ToInt32(c);
+                e = e - 32;
+                Console.WriteLine((char)e);
+            }
+
+            else
+            {
+                Console.WriteLine("You typed char wrong");
+            }
+                
+        }
     }
 }
